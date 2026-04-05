@@ -1,7 +1,16 @@
-# Data Model (Star Schema)
+# Power BI Reports & Data Model
 
-This section documents the Power BI data model used in the project.
+This folder documents the Power BI components of the Retail Clothing Data Analytics project.
 
-The model follows dimensional modeling best practices, with a central fact table and supporting dimension tables to ensure accurate filtering, aggregation, and time‑intelligence calculations.
+The focus is on analytical design, metric reliability, and data modeling rather than visual aesthetics alone.
 
-Screenshots and documentation will be added to illustrate the star schema design.
+## Contents
+
+- Data model (star schema)
+- KPI overview dashboards
+- Sales and profitability analysis
+- Customer behavior and retention insights
+- Product category and channel performance
+
+Due to GitHub limitations, Power BI `.pbix` files are not previewable.
+Key elements of the analysis are therefore documented using screenshots and explanations.
