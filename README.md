@@ -3,170 +3,137 @@
 
 ---
 
-## 📌 Project Overview
+## 📌 Project Summary
 
-This repository presents an **end‑to‑end retail data analytics project** that transforms raw transactional data into **business‑ready insights** using structured data preparation, dimensional modeling, and Power BI reporting.
+This repository showcases an **end‑to‑end retail data analytics project** focused on transforming raw transactional data into **reliable, business‑ready insights**.
 
-Rather than focusing solely on dashboard visuals, this project emphasizes:
-- **Data quality and reliability**
-- **Analytical feature engineering**
-- **Robust data modeling (Star Schema)**
-- **Validated metrics and time‑intelligence**
-- **Insight‑driven decision support**
-
-The work demonstrates how disciplined data preparation and modeling enable trustworthy analytics and meaningful business conclusions.
+The project emphasizes **data quality, analytical rigor, and decision‑oriented reporting**, rather than dashboards alone. It demonstrates how structured data preparation, dimensional modeling, and validated metrics enable trustworthy analytics and actionable conclusions.
 
 ---
 
-## 🎯 Business Problem Statement
+## 🎯 Business Context
 
-Initial exploratory analysis revealed a critical issue:
+Initial performance indicators revealed a critical issue:
 
-> **Sales volume was increasing significantly, but overall profitability was declining.**
+> **Sales volume was growing strongly, but profitability was declining.**
 
-This raised several business questions:
-- Are margin declines driven by product mix, pricing decisions, or rising costs?
-- Do higher sales volumes translate into higher customer value?
-- Is business growth driven by customer retention or constant acquisition?
-- Which channels, categories, and customers truly generate profit?
+This raised important questions:
+- Is growth being driven by low‑margin products?
+- Are sales increases translating into real customer value?
+- Is the business reliant on acquisition rather than loyalty?
+- Which categories, channels, and customer segments truly drive profit?
 
 This project was designed to answer those questions using data.
 
 ---
 
-## 🧹 Data Preparation & Wrangling (Power Query)
+## 🧹 Data Preparation & Quality Engineering
 
-A **structured and auditable data‑wrangling process** was implemented using **Power Query** in Power BI.
+Before any analysis, a **structured and auditable data‑wrangling process** was implemented using **Power Query** in Power BI.
 
-### Key Data Engineering Steps
-- Verified and standardized data types across all tables
-- Cleaned and normalized text fields (trim, clean, capitalization)
-- Consolidated customer identity fields to reduce duplication
-- Engineered analytical features:
-  - Customer age calculation
-  - Email availability indicators
-  - Product price band segmentation
-  - Shipping delay metrics
-  - Transaction‑level revenue (`LineAmount`)
-- Flagged anomalies such as negative shipping delays
-- Implemented data‑quality checks for missing customer, store, and pricing values
+Key steps included:
+- Data type validation and standardization
+- Text normalization and consistency checks
+- Feature engineering for analytics:
+  - Customer age
+  - Price bands
+  - Email availability flags
+  - Transaction‑level revenue calculations
+- Shipping delay analysis and anomaly detection
+- Explicit monitoring of missing or invalid key fields
 
-All transformation steps were documented in a **step‑by‑step wrangling log** to ensure transparency and reproducibility.
+All transformations were logged step‑by‑step to ensure transparency, reproducibility, and data trustworthiness.
 
-📂 Detailed transformation logic is stored in the `data-wrangling/` directory.
+📂 See `data-wrangling/` for the full transformation log.
 
 ---
 
-## 🧱 Data Modeling & Architecture
+## 🧱 Data Model & Architecture
 
-A **dimensional Star Schema** was implemented to support scalable analytics and reliable DAX calculations.
+A **dimensional star schema** was implemented to support scalable BI analysis and reliable DAX calculations.
 
-### Model Design
-- **Fact table:** Sales transactions  
-- **Dimension tables:** Customer, Product, Store, Date  
+### 📐 Star Schema Model
+![Star Schema](powerbi/model/star-schema-model.png)
 
-### Modeling Principles
-- One‑to‑many relationships from dimensions to the fact table
-- Removal of auto‑generated Power BI relationships
-- Dedicated Date table created using DAX for time‑intelligence
-- Centralized measure table for calculation governance
+**Design highlights:**
+- Central sales fact table
+- Supporting customer, product, store, supplier, and date dimensions
+- One‑to‑many relationships
+- Dedicated date table for time intelligence
 
-### Benefits
-- Accurate aggregations and filtering
-- Improved Power BI performance
-- Reliable year‑over‑year and period‑based analysis
-- Clear separation of facts and dimensions
+This structure ensures accurate filtering, aggregation, and performance across all reports.
 
 ---
 
-## 📐 Measures & Analytics (DAX)
+## 📊 KPI Overview (Core Performance)
 
-The project goes beyond basic KPIs by implementing **diagnostic and advanced measures**.
+A high‑level dashboard was created to monitor overall business performance and surface critical trends.
 
-### Core Business Measures
-- Total Sales
-- Total Quantity
-- Orders / Completed Orders
-- Gross Cost
-- Gross Margin and Margin %
+![Sales & Profitability KPIs](powerbi/dashboards/sales_profitability_kpis.png)
 
-### Time‑Intelligence Measures
-- Year‑to‑Date (YTD)
-- Month‑to‑Date (MTD)
-- Quarter‑to‑Date (QTD)
-- Prior‑Year and Year‑over‑Year comparisons
-- Shipped vs Ordered sales analysis
-
-### Advanced & Diagnostic Measures
-- Data‑quality metrics for missing keys
+The KPI overview highlights:
+- Strong sales growth
+- Declining profit margins
 - Average Order Value (AOV)
-- Average Unit Price
-- Discount impact analysis
-- Dynamic X/Y measures for correlation analysis
-- Customer metrics:
-  - New vs Repeat Customers
-  - Customer Retention Rate
-  - Customer Lifetime Value (CLV)
-  - RFM‑based segmentation
+- Customer Lifetime Value (CLV)
 
-All DAX measures were centrally organized to ensure consistency and maintainability.
+This view makes the **sales‑to‑profit disconnect** immediately visible and guides deeper diagnostic analysis.
 
 ---
 
-## 📊 Key Insights & Findings
+## 🔍 Analytical Insights
 
-The analysis revealed several important patterns:
+Key findings from the analysis include:
 
-- **Strong sales growth masked declining profitability**
-- Margin erosion was driven primarily by **low‑margin product categories**
-- A small number of categories contributed disproportionately to overall profit
-- Growth was **acquisition‑led**, not driven by customer loyalty
-- Customer retention and repeat purchase rates were weak
-- Higher‑value transactions were concentrated in specific sales channels
-- Data completeness issues directly affected segmentation accuracy
+- Sales growth was **not matched by profitability growth**
+- Margin erosion was driven by **low‑margin product categories**
+- A small number of “hero” categories generated disproportionate profit
+- Growth was **acquisition‑led**, with weak customer retention
+- Average Order Value showed stagnation despite higher transaction counts
+- Data completeness issues directly affected segmentation and insights
 
-These insights shifted the narrative from surface‑level sales performance to **value efficiency and long‑term sustainability**.
+These insights shifted the narrative from surface‑level revenue performance to **value efficiency and long‑term sustainability**.
 
 ---
 
 ## 💡 Data‑Driven Recommendations
 
-Based on the findings, several strategic recommendations were proposed:
-- Transition from a **volume‑first** to a **value‑based** growth strategy
+Based on the findings, the following strategic actions were recommended:
+
+- Shift from a **volume‑first** to a **value‑based** growth strategy
 - Prioritize high‑margin product categories
 - Improve customer retention through post‑purchase engagement
 - Optimize pricing and discount strategies
-- Focus channel investment on higher AOV performance
-- Address data‑quality gaps to improve decision confidence
+- Focus investment on channels with higher AOV
+- Strengthen data quality controls for more reliable decision‑making
 
-All recommendations are grounded in quantified metrics rather than assumptions.
+All recommendations are grounded in validated metrics rather than assumptions.
 
 ---
 
-## 🛠 Tools & Technologies Used
+## 🛠 Tools & Technologies
 
 - **Power BI**
   - Power Query (Data Transformation)
   - DAX (Measures & Time Intelligence)
-  - Data Modeling (Star Schema)
+  - Dimensional Modeling (Star Schema)
 - **Microsoft Excel**
-  - Data wrangling and transformation audit logs
-- **Retail transactional datasets**
-- **Dimensional modeling best practices**
+  - Data wrangling and audit logs
+- Retail transactional datasets
+- Dimensional modeling best practices
 
 ---
 
 ## 👤 Individual Contribution
 
-This project was completed as part of a group assignment.
+This project was completed as a group assignment.
 
-**My individual contributions focused on:**
-- Data‑wrangling strategy and transformation logic
-- Power Query implementation and feature engineering
-- Data‑quality validation and anomaly detection
-- Star schema design and relationship modeling
-- DAX measure development and time‑intelligence calculations
-- Interpretation and synthesis of analytical insights
+My individual contributions focused on:
+- Data wrangling strategy and execution
+- Data quality validation and anomaly detection
+- Dimensional modeling and relationship design
+- DAX measure development and time‑intelligence logic
+- Analytical interpretation and insight synthesis
 
 ---
 
@@ -174,18 +141,28 @@ This project was completed as part of a group assignment.
 
 ```
 retail-clothing-data-analytics/
-├── README.md
 ├── data-wrangling/
-│   └── GroupBMW_Part1_Log.xlsx
+│   └── retail-data-wrangling-log.xlsx
 ├── powerbi/
 │   ├── model/
+│   │   └── star-schema-model.png
 │   ├── dashboards/
 │   └── measures/
-├── insights/
-└── documentation/
+├── documentation/
+│   └── retail-analytics-project-report.pdf
+└── README.md
 ```
+
+---
+
+## 📘 Supporting Documentation
+
+A detailed project report is available in the `documentation/` folder for deeper reference.  
+The main README presents a concise, business‑focused summary.
+
+---
 
 ## ⚠️ Disclaimer
 
 This project was developed for **academic and portfolio demonstration purposes**.  
-The dataset and insights are used to illustrate data analytics and BI techniques and are not intended for real‑world deployment.
+The data and insights are used to illustrate analytics techniques and are not intended for live business deployment.
