@@ -113,6 +113,8 @@ All recommendations are grounded in validated metrics rather than assumptions.
 
 ## 🛠 Tools & Technologies
 
+Interactive dashboards include collapsible slicer panels to enable multi-dimensional exploration.
+
 - **Power BI**
   - Power Query (Data Transformation)
   - DAX (Measures & Time Intelligence)
