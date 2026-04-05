@@ -69,7 +69,7 @@ This structure ensures accurate filtering, aggregation, and performance across a
 
 A high‑level dashboard was created to monitor overall business performance and surface critical trends.
 
-![Sales & Profitability KPIs](powerbi/dashboards/sales_profitability_kpis.png)
+![Sales & Profitability KPIs](powerbi/dashboards/sales-profitability-kpis.png)
 
 The KPI overview highlights:
 - Strong sales growth
@@ -141,16 +141,32 @@ My individual contributions focused on:
 
 ```
 retail-clothing-data-analytics/
-├── data-wrangling/
+├── README.md                         # Project overview & key insights
+│
+├── data-wrangling/                   # Data cleaning & preparation
+│   ├── README.md
 │   └── retail-data-wrangling-log.xlsx
-├── powerbi/
-│   ├── model/
+│
+├── powerbi/                          # Business intelligence artifacts
+│   ├── README.md
+│   │
+│   ├── model/                        # Dimensional data model
+│   │   ├── README.md
 │   │   └── star-schema-model.png
-│   ├── dashboards/
-│   └── measures/
-├── documentation/
-│   └── retail-analytics-project-report.pdf
-└── README.md
+│   │
+│   ├── dashboards/                   # Analytical dashboards
+│   │   ├── README.md
+│   │   ├── sales-profitability-kpis.png
+│   │   ├── customer-retention-insights.png
+│   │   ├── category-margin-analysis.png
+│   │   └── time-seasonality-trends.png
+│   │
+│   └── measures/                     # DAX metrics & logic
+│       └── README.md
+│
+└── documentation/                    # Supporting academic documentation
+├── README.md
+└── retail-clothing-analytics-documentation.pdf
 ```
 
 ---
